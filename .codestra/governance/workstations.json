@@ -1,0 +1,621 @@
+{
+  "schema_version": "codestra.workstations.v3",
+  "family": "voice-agent",
+  "product": "Codestra-TTS-Kokoro",
+  "sections": [
+    {
+      "section": "tts-01-runtime",
+      "branch": "section/tts-01-runtime",
+      "order": 1,
+      "depends_on": [],
+      "subsections": [
+        {
+          "subsection": "01-bootstrap",
+          "workstation_id": "codestra-tts-kokoro::tts-01-runtime::01-bootstrap",
+          "branch": "subsection/tts-01-runtime--01-bootstrap",
+          "parent_branch": "section/tts-01-runtime",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-01-runtime/subsections/01-bootstrap/repo"
+        },
+        {
+          "subsection": "02-config",
+          "workstation_id": "codestra-tts-kokoro::tts-01-runtime::02-config",
+          "branch": "subsection/tts-01-runtime--02-config",
+          "parent_branch": "section/tts-01-runtime",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-01-runtime::01-bootstrap"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-01-runtime/subsections/02-config/repo"
+        },
+        {
+          "subsection": "03-health",
+          "workstation_id": "codestra-tts-kokoro::tts-01-runtime::03-health",
+          "branch": "subsection/tts-01-runtime--03-health",
+          "parent_branch": "section/tts-01-runtime",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-01-runtime::02-config"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-01-runtime/subsections/03-health/repo"
+        }
+      ]
+    },
+    {
+      "section": "tts-02-models",
+      "branch": "section/tts-02-models",
+      "order": 2,
+      "depends_on": [
+        "codestra-tts-kokoro::tts-01-runtime"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-registry",
+          "workstation_id": "codestra-tts-kokoro::tts-02-models::01-registry",
+          "branch": "subsection/tts-02-models--01-registry",
+          "parent_branch": "section/tts-02-models",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-02-models/subsections/01-registry/repo"
+        },
+        {
+          "subsection": "02-loading",
+          "workstation_id": "codestra-tts-kokoro::tts-02-models::02-loading",
+          "branch": "subsection/tts-02-models--02-loading",
+          "parent_branch": "section/tts-02-models",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-02-models::01-registry"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-02-models/subsections/02-loading/repo"
+        },
+        {
+          "subsection": "03-versioning",
+          "workstation_id": "codestra-tts-kokoro::tts-02-models::03-versioning",
+          "branch": "subsection/tts-02-models--03-versioning",
+          "parent_branch": "section/tts-02-models",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-02-models::02-loading"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-02-models/subsections/03-versioning/repo"
+        }
+      ]
+    },
+    {
+      "section": "tts-03-api",
+      "branch": "section/tts-03-api",
+      "order": 3,
+      "depends_on": [
+        "codestra-tts-kokoro::tts-02-models"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-synthesis",
+          "workstation_id": "codestra-tts-kokoro::tts-03-api::01-synthesis",
+          "branch": "subsection/tts-03-api--01-synthesis",
+          "parent_branch": "section/tts-03-api",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-03-api/subsections/01-synthesis/repo"
+        },
+        {
+          "subsection": "02-streaming",
+          "workstation_id": "codestra-tts-kokoro::tts-03-api::02-streaming",
+          "branch": "subsection/tts-03-api--02-streaming",
+          "parent_branch": "section/tts-03-api",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-03-api::01-synthesis"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-03-api/subsections/02-streaming/repo"
+        },
+        {
+          "subsection": "03-contract",
+          "workstation_id": "codestra-tts-kokoro::tts-03-api::03-contract",
+          "branch": "subsection/tts-03-api--03-contract",
+          "parent_branch": "section/tts-03-api",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-03-api::02-streaming"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-03-api/subsections/03-contract/repo"
+        }
+      ]
+    },
+    {
+      "section": "tts-04-workers",
+      "branch": "section/tts-04-workers",
+      "order": 4,
+      "depends_on": [
+        "codestra-tts-kokoro::tts-03-api"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-queue",
+          "workstation_id": "codestra-tts-kokoro::tts-04-workers::01-queue",
+          "branch": "subsection/tts-04-workers--01-queue",
+          "parent_branch": "section/tts-04-workers",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-04-workers/subsections/01-queue/repo"
+        },
+        {
+          "subsection": "02-batching",
+          "workstation_id": "codestra-tts-kokoro::tts-04-workers::02-batching",
+          "branch": "subsection/tts-04-workers--02-batching",
+          "parent_branch": "section/tts-04-workers",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-04-workers::01-queue"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-04-workers/subsections/02-batching/repo"
+        },
+        {
+          "subsection": "03-concurrency",
+          "workstation_id": "codestra-tts-kokoro::tts-04-workers::03-concurrency",
+          "branch": "subsection/tts-04-workers--03-concurrency",
+          "parent_branch": "section/tts-04-workers",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-04-workers::02-batching"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-04-workers/subsections/03-concurrency/repo"
+        }
+      ]
+    },
+    {
+      "section": "tts-05-quality",
+      "branch": "section/tts-05-quality",
+      "order": 5,
+      "depends_on": [
+        "codestra-tts-kokoro::tts-04-workers"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-voices",
+          "workstation_id": "codestra-tts-kokoro::tts-05-quality::01-voices",
+          "branch": "subsection/tts-05-quality--01-voices",
+          "parent_branch": "section/tts-05-quality",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-05-quality/subsections/01-voices/repo"
+        },
+        {
+          "subsection": "02-normalization",
+          "workstation_id": "codestra-tts-kokoro::tts-05-quality::02-normalization",
+          "branch": "subsection/tts-05-quality--02-normalization",
+          "parent_branch": "section/tts-05-quality",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-05-quality::01-voices"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-05-quality/subsections/02-normalization/repo"
+        },
+        {
+          "subsection": "03-regression",
+          "workstation_id": "codestra-tts-kokoro::tts-05-quality::03-regression",
+          "branch": "subsection/tts-05-quality--03-regression",
+          "parent_branch": "section/tts-05-quality",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-05-quality::02-normalization"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-05-quality/subsections/03-regression/repo"
+        }
+      ]
+    },
+    {
+      "section": "tts-06-performance",
+      "branch": "section/tts-06-performance",
+      "order": 6,
+      "depends_on": [
+        "codestra-tts-kokoro::tts-05-quality"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-cpu-gpu",
+          "workstation_id": "codestra-tts-kokoro::tts-06-performance::01-cpu-gpu",
+          "branch": "subsection/tts-06-performance--01-cpu-gpu",
+          "parent_branch": "section/tts-06-performance",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-06-performance/subsections/01-cpu-gpu/repo"
+        },
+        {
+          "subsection": "02-latency",
+          "workstation_id": "codestra-tts-kokoro::tts-06-performance::02-latency",
+          "branch": "subsection/tts-06-performance--02-latency",
+          "parent_branch": "section/tts-06-performance",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-06-performance::01-cpu-gpu"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-06-performance/subsections/02-latency/repo"
+        },
+        {
+          "subsection": "03-capacity",
+          "workstation_id": "codestra-tts-kokoro::tts-06-performance::03-capacity",
+          "branch": "subsection/tts-06-performance--03-capacity",
+          "parent_branch": "section/tts-06-performance",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-06-performance::02-latency"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-06-performance/subsections/03-capacity/repo"
+        }
+      ]
+    },
+    {
+      "section": "tts-07-security-observability",
+      "branch": "section/tts-07-security-observability",
+      "order": 7,
+      "depends_on": [
+        "codestra-tts-kokoro::tts-06-performance"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-isolation",
+          "workstation_id": "codestra-tts-kokoro::tts-07-security-observability::01-isolation",
+          "branch": "subsection/tts-07-security-observability--01-isolation",
+          "parent_branch": "section/tts-07-security-observability",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-07-security-observability/subsections/01-isolation/repo"
+        },
+        {
+          "subsection": "02-metrics",
+          "workstation_id": "codestra-tts-kokoro::tts-07-security-observability::02-metrics",
+          "branch": "subsection/tts-07-security-observability--02-metrics",
+          "parent_branch": "section/tts-07-security-observability",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-07-security-observability::01-isolation"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-07-security-observability/subsections/02-metrics/repo"
+        },
+        {
+          "subsection": "03-logs",
+          "workstation_id": "codestra-tts-kokoro::tts-07-security-observability::03-logs",
+          "branch": "subsection/tts-07-security-observability--03-logs",
+          "parent_branch": "section/tts-07-security-observability",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-07-security-observability::02-metrics"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-07-security-observability/subsections/03-logs/repo"
+        }
+      ]
+    },
+    {
+      "section": "tts-08-release",
+      "branch": "section/tts-08-release",
+      "order": 8,
+      "depends_on": [
+        "codestra-tts-kokoro::tts-07-security-observability"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-container",
+          "workstation_id": "codestra-tts-kokoro::tts-08-release::01-container",
+          "branch": "subsection/tts-08-release--01-container",
+          "parent_branch": "section/tts-08-release",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-08-release/subsections/01-container/repo"
+        },
+        {
+          "subsection": "02-certification",
+          "workstation_id": "codestra-tts-kokoro::tts-08-release::02-certification",
+          "branch": "subsection/tts-08-release--02-certification",
+          "parent_branch": "section/tts-08-release",
+          "order": 2,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-08-release::01-container"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-08-release/subsections/02-certification/repo"
+        },
+        {
+          "subsection": "03-promotion",
+          "workstation_id": "codestra-tts-kokoro::tts-08-release::03-promotion",
+          "branch": "subsection/tts-08-release--03-promotion",
+          "parent_branch": "section/tts-08-release",
+          "order": 3,
+          "depends_on": [
+            "codestra-tts-kokoro::tts-08-release::02-certification"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Codestra-TTS-Kokoro/sections/tts-08-release/subsections/03-promotion/repo"
+        }
+      ]
+    }
+  ]
+}
